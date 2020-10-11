@@ -24,6 +24,8 @@ backend  - C simulator
 backend  - iverilog+vpi
 ```
 
-[CMU CS courses 15-nnn](https://csd.cmu.edu/cs-and-related-undergraduate-courses)
+CMU CS courses 15-nnn
+* [page 626/814](http://coursecatalog.web.cmu.edu/pdf/2019-20.pdf)
+* <del>[outdated](https://csd.cmu.edu/cs-and-related-undergraduate-courses)</del>
 
 [CMU ECE courses 18-nnn](https://courses.ece.cmu.edu/)
