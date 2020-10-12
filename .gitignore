@@ -1,3 +1,4 @@
 # top-level .gitignore
 
 ch01/hello.s
+ch01/*.out
