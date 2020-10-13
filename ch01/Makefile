@@ -5,6 +5,7 @@ include ../Makefile.defs
 hello.s:
 
 overwrite_other_proc_var.out:
+virtual_address_space.out:
 
 clean:
 	@rm -fv \
