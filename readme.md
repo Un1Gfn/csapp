@@ -1,7 +1,22 @@
 
+[Lab Assignments](http://csapp.cs.cmu.edu/3e/labs.html)
+
+[Code Examples](http://csapp.cs.cmu.edu/3e/code.html)
+
+[Web Asides](http://csapp.cs.cmu.edu/3e/waside.html)
+
+<!--
+
+```
+CS:APP ARCH:VLOG
+no FPGA
+simulation only
+frontend - ncurses/motif/gtk
+backend  - C simulator
+backend  - iverilog+vpi
+```
+
 [CS:APP Web page](http://csapp.cs.cmu.edu/)
-* [Code Examples](http://csapp.cs.cmu.edu/3e/code.html)
-* [Lab Assignments](http://csapp.cs.cmu.edu/3e/labs.html)
 *  [Student Site](http://csapp.cs.cmu.edu/3e/students.html)
   * Online GDB Materials - Quick Guide to GDB
   * Chapter 4: Processor Architecture - Y86-64 tools and documentation - Source distribution - hcl2v
@@ -15,17 +30,4 @@
 
 [review](https://medium.com/tech-book-reviews/computer-systems-a-programmers-perspective-3ae36a119962)
 
-```
-CS:APP ARCH:VLOG
-no FPGA
-simulation only
-frontend - ncurses/motif/gtk
-backend  - C simulator
-backend  - iverilog+vpi
-```
-
-CMU CS courses 15-nnn
-* [page 626/814](http://coursecatalog.web.cmu.edu/pdf/2019-20.pdf)
-* <del>[outdated](https://csd.cmu.edu/cs-and-related-undergraduate-courses)</del>
-
-[CMU ECE courses 18-nnn](https://courses.ece.cmu.edu/)
+-->
