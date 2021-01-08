@@ -9,25 +9,12 @@ MAKEFLAGS += --no-builtin-variables
 # 	@echo MAKEFLAGS=$(MAKEFLAGS)
 # 	@echo MAKEOVERRIDES=$(MAKEOVERRIDES)
 
-###
-
 CC:=gcc
 
 # CFLAGS:=-std=gnu11 -g -O0 -Wall -Wextra -Wno-unused-parameter -Winline -D_GNU_SOURCE -pthread # -fmax-errors=1
 CFLAGS:=-std=gnu11 -g -O0 -Wall -Wextra -Wno-unused-parameter -Winline # -D_GNU_SOURCE -pthread # -fmax-errors=1
-%.o:%.c
-	$(CC) -c $(CFLAGS) $(CFLAGS_EXTRA) -o $@ $<
-%.out:%.c
-	$(CC) $(CFLAGS) $(CFLAGS_EXTRA) -o $@ $<
-
-###
-
 CFLAGS_NDEBUG:=-std=c99 -O1 -Wall -Wextra -Wno-unused-parameter
-# CFLAGS_32:=-std=c99 -O0 -Wall -Wextra -Wno-unused-parameter -m32
-%.c.s:%.c
-	$(CC) -S $(CFLAGS_NDEBUG) -o $@ $<
-
-###
+# %.o: %.c ; $(CC) -c $(CFLAGS) -o $@ $<
 
 else
 $(error double inclusion)
