@@ -1,0 +1,42 @@
+https://aur.archlinux.org/packages/buildroot-dummy
+https://buildroot.org/download.html
+~/cgi/cgi-tmp/buildroot-2020.11.1.tar.bz2
+
+### BEGIN DANGER ZONE ###
+rm -rf ~/buildroot-????.??.?/
+rm -rf ~/buildroot-????.??.?-m68k/
+rm -rf ~/buildroot-????.??.?-powerpc/
+ls -d ~/buil*
+### END DANGER ZONE ###
+
+http://download.savannah.gnu.org/mirmon/allgnu/#cn
+https://www.gnu.org/prep/ftp.en.html#gnu_mirror_list
+
+cd ~ && tar xf ~/cgi/cgi-tmp/buildroot-2020.11.1.tar.bz2 && mv -v buildroot-2020.11.1 buildroot-2020.11.1-m68k    && cd buildroot-????.??.?-m68k    && make gconfig
+Target options -> Target Architecture -> m68k
+Build options -> Download dir -> /home/darren/.cache/buildroot_dl
+Build options -> Mirrors and Download locations -> Kernel.org mirror -> https://mirrors.tuna.tsinghua.edu.cn
+Build options -> Mirrors and Download locations -> GNU Software mirror -> https://mirrors.nju.edu.cn/gnu
+Toolchain -> Kernel Headers -> Linux 5.9.x kernel headers
+Toolchain -> Binutils Version -> binutils 2.35.1
+Toolchain -> GCC compiler Version -> gcc 10.x
+Save
+package/linux-headers/linux-headers.mk -> change '/linux/kernel/v' to '/kernel/v'
+/usr/bin/time --format="\n  wall clock time - %E\n" make toolchain
+
+cd ~ && tar xf ~/cgi/cgi-tmp/buildroot-2020.11.1.tar.bz2 && mv -v buildroot-2020.11.1 buildroot-2020.11.1-powerpc && cd buildroot-????.??.?-powerpc && make gconfig
+Target options -> Target Architecture -> PowerPC
+Build options -> Download dir -> /home/darren/.cache/buildroot_dl
+Build options -> Mirrors and Download locations -> Kernel.org mirror -> https://mirrors.tuna.tsinghua.edu.cn
+Build options -> Mirrors and Download locations -> GNU Software mirror -> https://mirrors.nju.edu.cn/gnu
+Toolchain -> C library -> glibc
+Toolchain -> Kernel Headers -> Linux 5.9.x kernel headers
+Toolchain -> Binutils Version -> binutils 2.35.1
+Toolchain -> GCC compiler Version -> gcc 10.x
+Save
+package/linux-headers/linux-headers.mk -> change '/linux/kernel/v' to '/kernel/v'
+/usr/bin/time --format="\n  wall clock time - %E\n" make toolchain
+
+/home/darren/buildroot/buildroot-????.??.?/output/host/bin/m68k-linux-gcc -static p81_show_bytes.c
+/home/darren/buildroot/buildroot-????.??.?/output/host/bin/m68k-buildroot-linux-uclibc-gcc -static p81_show_bytes.c
+qemu-m68k a.out

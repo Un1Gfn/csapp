@@ -9,8 +9,6 @@ MAKEFLAGS += --no-builtin-variables
 # 	@echo MAKEFLAGS=$(MAKEFLAGS)
 # 	@echo MAKEOVERRIDES=$(MAKEOVERRIDES)
 
-CC:=gcc
-
 # CFLAGS:=-std=gnu11 -g -O0 -Wall -Wextra -Wno-unused-parameter -Winline -D_GNU_SOURCE -pthread # -fmax-errors=1
 CFLAGS:=-std=gnu11 -g -O0 -Wall -Wextra -Wno-unused-parameter -Winline # -D_GNU_SOURCE -pthread # -fmax-errors=1
 CFLAGS_NDEBUG:=-std=c99 -O1 -Wall -Wextra -Wno-unused-parameter
