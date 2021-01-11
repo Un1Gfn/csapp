@@ -36,10 +36,16 @@ p81_show_bytes_run: $(addsuffix .out, $(addprefix p81_show_bytes_, i386 amd64 m6
 	@echo
 	@echo -n "move this window to an empty workspace then press enter "; read -r
 	@echo
-	@sleep 0.3; alacritty --title i386    --command ./p81_show_bytes_i386.out &
-	@sleep 0.3; alacritty --title amd64   --command ./p81_show_bytes_amd64.out &
-	@sleep 0.3; alacritty --title m68k    --command qemu-m68k ./p81_show_bytes_m68k.out &
-	@sleep 0.3; alacritty --title powerpc --command qemu-ppc  ./p81_show_bytes_powerpc.out &
+	@sleep 0.3; alacritty --title i386    --command sh -c "qemu-i386   ./p81_show_bytes_i386.out    12345; read -r" &
+	@sleep 0.3; alacritty --title amd64   --command sh -c "qemu-x86_64 ./p81_show_bytes_amd64.out   12345; read -r" &
+	@sleep 0.3; alacritty --title m68k    --command sh -c "qemu-m68k   ./p81_show_bytes_m68k.out    12345; read -r" &
+	@sleep 0.3; alacritty --title powerpc --command sh -c "qemu-ppc    ./p81_show_bytes_powerpc.out 12345; read -r" &
+# 	@sleep 0.3; alacritty --title i386    --command sh -c "qemu-i386   -L /                                            ./p81_show_bytes_i386.out; read -r" &
+# 	@sleep 0.3; alacritty --title amd64   --command sh -c "qemu-x86_64 -L /                                            ./p81_show_bytes_amd64.out; read -r" &
+# 	@sleep 0.3; alacritty --title m68k    --command sh -c "qemu-m68k   -L ~/buildroot-2020.11.1-m68k/output/target/    ./p81_show_bytes_m68k.out; read -r" &
+# 	@sleep 0.3; alacritty --title powerpc --command sh -c "qemu-ppc    -L ~/buildroot-2020.11.1-powerpc/output/target/ ./p81_show_bytes_powerpc.out; read -r" &
+
+p83_longest_common_substring.out:
 
 # test:
 # 	@echo $(addprefix a, b c)
