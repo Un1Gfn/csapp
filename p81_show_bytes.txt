@@ -1,3 +1,13 @@
+https://buildroot.org/downloads/manual/manual.html#_dealing_efficiently_with_filesystem_images
+
+https://wiki.debian.org/Multiarch/Tuples
+
+https://wiki.archlinux.org/index.php/Cross-compiling_tools_package_guidelines
+https://toolchains.bootlin.com/
+
+Anatomy of Cross-Compilation Toolchains @ Embedded Linux Conference ELC Europe 2016
+https://www.youtube.com/watch?v=Pbt330zuNPc
+
 https://aur.archlinux.org/packages/buildroot-dummy
 https://buildroot.org/download.html
 ~/cgi/cgi-tmp/buildroot-2020.11.1.tar.bz2
@@ -37,6 +47,7 @@ Save
 package/linux-headers/linux-headers.mk -> change '/linux/kernel/v' to '/kernel/v'
 /usr/bin/time --format="\n  wall clock time - %E\n" make toolchain
 
-/home/darren/buildroot/buildroot-????.??.?/output/host/bin/m68k-linux-gcc -static p81_show_bytes.c
-/home/darren/buildroot/buildroot-????.??.?/output/host/bin/m68k-buildroot-linux-uclibc-gcc -static p81_show_bytes.c
-qemu-m68k a.out
+System configuration -> Init system -> None
+System configuration -> /bin/sh -> None
+Target packages -> BusyBox -> N
+Filesystem images -> tar the root filesystem -> N

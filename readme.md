@@ -30,4 +30,7 @@ backend  - iverilog+vpi
 
 [review](https://medium.com/tech-book-reviews/computer-systems-a-programmers-perspective-3ae36a119962)
 
+[Implicit Variables](https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html#Implicit-Variables)  
+[Implicit Rules](https://www.gnu.org/software/make/manual/html_node/Catalogue-of-Rules.html#Catalogue-of-Rules)
+
 -->
